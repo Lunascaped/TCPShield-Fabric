@@ -1,3 +1,21 @@
+# TCPShield Fabric Mod
+
+### Description
+
+This is a port of the original RealIP plugin from TCPShield to Fabric, this allows you to read the real IP of players connecting through TCPShield's network and block connections that are not proxied through TCPShield.
+
+
+### Compatibility
+
+This mod is only compatible with Fabric 1.16 to 1.21.8, if you want a server version, look at the [original TCPShield plugin](https://github.com/TCPShield/RealIP)
+
+### Credit
+
+This is heavily based from the work of [he3als](https://github.com/he3als) port of the original TCPShield plugin to Fabric, you can find his repository [here](https://github.com/he3als/RealIP/tree/fabric)
+
+## Original README below
+
+
 # TCPShield
 TCPShield is the plugin for the same named DDoS mitigation service [TCPShield](https://tcpshield.com).
 
@@ -6,7 +24,7 @@ It also parses passed IP addresses so the server is aware of the real player IP 
 
 ### Compatibility
 
-TCPShield is compatible with Spigot / CraftBukkit, BungeeCord, Velocity, and Fabric.
+TCPShield is compatible with Spigot / CraftBukkit, BungeeCord and Velocity.
 
 When using Spigot / CraftBukkit, [ProtocolLib](https://github.com/aadnk/ProtocolLib) needs to be installed.
 
