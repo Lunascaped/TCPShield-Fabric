@@ -11,7 +11,7 @@ This mod is only compatible with Fabric 1.16 to 1.21.8, if you want a server ver
 
 ### Credit
 
-This is heavily based from the work of [he3als](https://github.com/he3als) port of the original TCPShield plugin to Fabric, you can find his repository [here](https://github.com/he3als/RealIP/tree/fabric)
+This is heavily based from the work of [he3als](https://github.com/he3als) port of the original TCPShield plugin to Fabric, you can find her repository [here](https://github.com/he3als/RealIP/tree/fabric)
 
 ## Original README below
 
