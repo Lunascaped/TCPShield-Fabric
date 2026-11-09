@@ -1,21 +1,21 @@
 package net.tcpshield.tcpshield.fabric.impl;
 
-import net.minecraft.network.packet.c2s.handshake.HandshakeC2SPacket;
-import net.tcpshield.tcpshield.fabric.mixin.HandshakeC2SPacketAccessor;
+import net.minecraft.network.protocol.handshake.ClientIntentionPacket;
+import net.tcpshield.tcpshield.fabric.mixin.IntentionPacketAccessor;
 import net.tcpshield.tcpshield.provider.PacketProvider;
 import net.tcpshield.tcpshield.util.exception.manipulate.PacketManipulationException;
 
 public class FabricPacket implements PacketProvider {
 
-    private final HandshakeC2SPacket handshake;
+    private final ClientIntentionPacket handshake;
 
-    public FabricPacket(HandshakeC2SPacket handshake) {
+    public FabricPacket(ClientIntentionPacket handshake) {
         this.handshake = handshake;
     }
 
     @Override
     public String getPayloadString() {
-        return HandshakeC2SPacketAccessor.class.cast(handshake).getAddress();
+        return IntentionPacketAccessor.class.cast(handshake).getHostName();
     }
 
     @Override

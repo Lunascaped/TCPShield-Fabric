@@ -7,7 +7,7 @@ This is a port of the original RealIP plugin from TCPShield to Fabric, this allo
 
 ### Compatibility
 
-This mod is only compatible with Fabric 1.16 to 1.21.8, if you want a server version, look at the [original TCPShield plugin](https://github.com/TCPShield/RealIP)
+This mod is only compatible with Fabric 1.16 to 26.3, if you want a server version, look at the [original TCPShield plugin](https://github.com/TCPShield/RealIP)
 
 ### Credit
 

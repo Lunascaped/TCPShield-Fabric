@@ -1,3 +1,7 @@
+plugins {
+    id("dev.kikugie.loom-back-compat")
+}
+
 java {
     withSourcesJar()
 }
@@ -8,23 +12,24 @@ base {
     archivesName.set("TCPShield")
 }
 
-plugins {
-    id("fabric-loom") version "1.10-SNAPSHOT"
-}
+
+val loaderVersion = project.findProperty("deps.fabric_loader")?.toString() ?: "0.16.13"
+
 dependencies {
-    minecraft("com.mojang:minecraft:${stonecutter.current}")
-    mappings("net.fabricmc:yarn:${property("deps.yarn")}:v2")
-    modImplementation("net.fabricmc:fabric-loader:0.16.13")
+    minecraft("com.mojang:minecraft:${sc.current.version}")
+
+    loomx.applyMojangMappings()
+
+    modImplementation("net.fabricmc:fabric-loader:$loaderVersion")
 }
+
 repositories {
     maven("https://repo1.maven.org/maven2/")
     maven("https://oss.sonatype.org/content/repositories/snapshots")
     maven("https://repo.opencollab.dev/maven-snapshots/")
     maven("https://maven.fabricmc.net/")
 }
-fun DependencyHandlerScope.includeMod(dep: String) {
-    include(modImplementation(dep)!!)
-}
+
 tasks {
     processResources {
         inputs.property("version", project.version)
@@ -40,6 +45,7 @@ tasks {
     compileJava {
         val currentVersion = stonecutter.current.version
         val javaVersion = when {
+            currentVersion.startsWith("26.1") -> 25
             currentVersion.startsWith("1.21") -> 21
             currentVersion.startsWith("1.20.5") || currentVersion.startsWith("1.20.6") -> 21
             currentVersion.startsWith("1.20") -> 17
